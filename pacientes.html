@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>   
+    <main>
+        <div class="container mt-5 py-4 border">
+            <div class="row justify-content-center">
+                <h1 class="text-center mt-2">Bienvenido al Sistema de Turnos Online</h1>
+                <p class="text-center mt-2">Usted podrá acceder de manera rápida y sencilla a la reserva de turnos. Podrá elegir la especialidad y el prestador médico que usted desee.</p>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Buscar Turno</button>
+                </div>
+                
+            </div>
+            
+        </div>
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-modal="true">
+            <div class="modal-dialog" role="document" aria-labelledby="exampleModalLabel">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu turno</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="especialidad" class="form-label">Especialidad</label>
+                                <select class="form-select" id="especialidad" name="especialidad" required>
+                                    <option selected value="">Elija una especialidad</option>
+                                    <option value="odontologia" id="select1">Odontologia</option>
+                                    <option value="cardiologia" id="select2">Cardiologia</option>
+                                </select>
+                                <button type="button" class="btn btn-success w-auto mt-4" data-bs-target="#horario" data-bs-toggle="list" onclick="buscarMedicos()">Buscar</button>
+                            </div>
+                            <div class="mb-3">
+                                <p id="resultados">Medicos disponibles:</p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="motivo" class="form-label">Ingrese su consulta</label>
+                                <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea>
+                              </div>
+                        </div>
+                    </form>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar turno</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+    </main>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./medicos.js"></script>
+
+</body>
+</html>
