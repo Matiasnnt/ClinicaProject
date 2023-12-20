@@ -59,60 +59,51 @@
     
     
     <main>
-        <div class="container mt-5 py-4 border">
-            <div class="row justify-content-center">
-                <h1 class="text-center mt-2">Bienvenido al Sistema de Turnos Online</h1>
-                <p class="text-center mt-2">Usted podrá acceder de manera rápida y sencilla a la reserva de turnos. Podrá elegir la especialidad y el prestador médico que usted desee.</p>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Buscar Turno</button>
-                </div>
-                
-            </div>
-            
-        </div>
-
-
-
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-modal="true">
-            <div class="modal-dialog" role="document" aria-labelledby="exampleModalLabel">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu turno</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="especialidad" class="form-label">Especialidad</label>
-                                <select class="form-select" id="especialidad" name="especialidad" required>
-                                    <option selected value="">Elija una especialidad</option>
-                                    <option value="odontologia" id="select1">Odontologia</option>
-                                    <option value="cardiologia" id="select2">Cardiologia</option>
-                                </select>
-                                <button type="button" class="btn btn-success w-auto mt-4" data-bs-target="#horario" data-bs-toggle="list" onclick="buscarMedicos()">Buscar</button>
-                            </div>
-                            <div class="mb-3">
-                                <p id="resultados">Medicos disponibles:</p>
-                            </div>
-                            <div class="mb-3">
-                                <label for="motivo" class="form-label">Ingrese su consulta</label>
-                                <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea>
-                              </div>
-                        </div>
-                    </form>
-                  
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar turno</button>
-                </div>
-              </div>
-            </div>
+      <section class="justify-content-center">
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+              <h1 class="text-center mt-2">Bienvenido al Sistema de Turnos Online</h1>
+              <p class="text-center mt-2">Usted podrá acceder de manera rápida y sencilla a la reserva de turnos. Podrá elegir la especialidad y el prestador médico que usted desee.</p>
           </div>
+        </div>
+        <div class="container">
+          <form class="row justify-content-center" id="formCita">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="especialidad" class="form-label">Especialidades</label>
+                    <select class="form-select" aria-label="Default select example" id="especialidad">
+                      <option selected value="">Elija una especialidad</option>
+                      <option value="1">Traumatologia</option>
+                      <option value="2">Dermatologia</option>
+                      <option value="3">Gastroenterologia</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="especialidad" class="form-label">Horario</label>
+                    <select class="form-select" aria-label="Default select example" id="hora" >
+                      <option selected value="">Elija un horario</option>
+                      <option value="1">Mañana</option>
+                      <option value="2">Tarde</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="especialidad" class="form-label">Medico Disponible</label>
+                    <select class="form-select" aria-label="Default select example" id="agregarMedico" >
+                      <option selected value="">Elija un medico</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <button type="button" class="btn btn-success w-auto mt-4" onclick="buscarMedicos()">Buscar</button>
+
+                </div>
+            </div>
+          </form>
+        </div>
+               
+     </section>
+        
         
     </main>
 
