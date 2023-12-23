@@ -3,14 +3,17 @@ function validar() {
     let especialidad = document.getElementById("especialidad").value
     let hora = document.getElementById("hora").value
 
+    // Verifica si se selecciono una especialidad y un horario
     if (especialidad == 0 && hora == 0) {
         alert("Debe seleccionar una especialidad y el horario")
         return
     }
+    // Verifica si se selecciono una especialidad
     if (especialidad == 0) {
         alert("Debe seleccionar una especialidad")
         return
     } 
+    // Verifica si se selecciono un horario
     if (hora == 0) {
         alert("Debe seleccionar un horario")
         return
@@ -21,7 +24,7 @@ function validar() {
 const medicos = [
     { nombre: 'Medico 1', especialidad: '1', horarios: ['1', '2'] }, // '1' para odontología y '2' para cardiología
     { nombre: 'Medico 2', especialidad: '2', horarios: ['1', '2'] }, // '1' para mañana y '2' para tarde
-    { nombre: 'Medico 3', especialidad: '3', horarios: ['1', '2'] }, // '1' para mañana y '2' para tarde
+    { nombre: 'Medico 3', especialidad: '3', horarios: ['1', '2'] }, 
     // Agrega más médicos según sea necesario
   ]
   
@@ -56,6 +59,7 @@ const medicos = [
   }
 
 
+  // Previene el envío del formulario y verifica si estan seleccionados todos los campos 
   document.getElementById('formCita').addEventListener('submit', function(event) {
     event.preventDefault()
 
