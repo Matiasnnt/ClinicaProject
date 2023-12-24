@@ -20,12 +20,16 @@ function validar() {
     }
 }
 
-// Listado de médicos con su especialidad y horarios
+// Listado de médicos con su especialidad y horarios ("1" para mañana y "2" para tarde)
 const medicos = [
-    { nombre: 'Medico 1', especialidad: '1', horarios: ['1', '2'] }, // '1' para odontología y '2' para cardiología
-    { nombre: 'Medico 2', especialidad: '2', horarios: ['1', '2'] }, // '1' para mañana y '2' para tarde
+    { nombre: 'Medico 1', especialidad: '1', horarios: ['1', '2'] }, 
+    { nombre: 'Medico 2', especialidad: '2', horarios: ['1', '2'] },
     { nombre: 'Medico 3', especialidad: '3', horarios: ['1', '2'] }, 
-    // Agrega más médicos según sea necesario
+    { nombre: 'Medico 4', especialidad: '4', horarios: ['1', '2'] }, 
+    { nombre: 'Medico 5', especialidad: '5', horarios: ['1', '2'] }, 
+    { nombre: 'Medico 6', especialidad: '6', horarios: ['1', '2'] }, 
+    { nombre: 'Medico 7', especialidad: '7', horarios: ['1', '2'] },
+
   ]
   
   // Escucha los cambios en los campos de especialidad y hora
@@ -46,7 +50,7 @@ const medicos = [
       let selectMedico = document.getElementById('agregarMedico')
   
       // Limpia el campo select de médicos disponibles
-      selectMedico.innerHTML = ''
+      selectMedico.innerHTML = ''      
   
       // Agrega los médicos filtrados al campo select de médicos disponibles
       for (let medico of medicosFiltrados) {
@@ -58,8 +62,7 @@ const medicos = [
     }
   }
 
-
-  // Previene el envío del formulario y verifica si estan seleccionados todos los campos 
+  // Previene el envío del formulario y verifica si estan seleccionados los campos 
   document.getElementById('formCita').addEventListener('submit', function(event) {
     event.preventDefault()
 
@@ -74,10 +77,13 @@ const medicos = [
 
     // Verifica si el campo de texto está vacío
     if (campoTexto.value.trim() === '') {
-        alert('Por favor, complete todos los campos.')
+        alert('Por favor, complete el campo de consulta.')
         return
     }
 
     // Mensaje de éxito
     alert('La cita ha sido programada con éxito.')
+
+    // Limpia el formulario
+    this.reset()
 })
